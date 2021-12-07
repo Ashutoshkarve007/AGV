@@ -41,31 +41,31 @@ void loop()
     digitalWrite(MotorAip2,LOW);
     digitalWrite(MotorBip1,HIGH);
     digitalWrite(MotorBip2,LOW);
-    analogWrite (enA, 100);
-    analogWrite (enB, 100);
+    analogWrite (enA, 50);
+    analogWrite (enB, 50);
   }
 
-  else if(digitalRead(IR1)==LOW && digitalRead(IR2)==HIGH)
+  else if(digitalRead(IR1)==HIGH && digitalRead(IR2)==LOW)    //change >> High - Low
   {
     //Tilt robot towards left by stopping the left wheel and moving the right one
     digitalWrite(MotorAip1,HIGH);     
     digitalWrite(MotorAip2,LOW);
     digitalWrite(MotorBip1,LOW);
     digitalWrite(MotorBip2,HIGH);
-    analogWrite (enA, 10);
-    analogWrite (enB, 100);
+    analogWrite (enA, 50);
+    analogWrite (enB, 10);
    delay(100);
   }
 
-  else if(digitalRead(IR1)==HIGH && digitalRead(IR2)==LOW)
+  else if(digitalRead(IR1)==LOW && digitalRead(IR2)==HIGH)
   {
     //Tilt robot towards right by stopping the right wheel and moving the left one
      digitalWrite(MotorAip1,LOW);     // If I want to turn right then the speed of the right wheel should be less than that of the left wheel, here, let a be the right wheel
     digitalWrite(MotorAip2,HIGH);
     digitalWrite(MotorBip1,HIGH);
     digitalWrite(MotorBip2,LOW);
-    analogWrite (enA, 100);
-   analogWrite (enB, 10);
+    analogWrite (enA, 10);
+   analogWrite (enB, 50);
    delay(100);
   }
 
